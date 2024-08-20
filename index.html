@@ -73,12 +73,23 @@
             margin-top: 20px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
-        .bio img {
-            border-radius: 50%;
+        .bio-images {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             margin-right: 20px;
+        }
+        .bio-images img {
             width: 180px; /* Adjust size as needed */
             height: 180px; /* Adjust size as needed */
+            border-radius: 50%;
+            margin-bottom: 10px; /* Adds space between images */
+            object-fit: cover;
+        }
+        .bio-text {
+            flex-grow: 1;
         }
         .bio h2 {
             color: #333;
@@ -106,6 +117,8 @@
     <div class="container">
         <section id="about" class="bio">
             <img src="Rebecca Mbaya.jpg" alt="Rebecca Mbaya">
+            <img src="images/rebecca_profile2.jpg" alt="Rebecca Mbaya">
+            <img src="images/rebecca_profile3.jpg" alt="Rebecca Mbaya">
             <div>
                 <h2>About Me</h2>
             <p>My name is Rebecca Mbaya and I’m a social innovator and co-founder of Congo Excel Technologies (CET).</p>
