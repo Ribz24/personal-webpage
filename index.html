@@ -21,46 +21,38 @@
             overflow: hidden;
         }
        header {
-        background: #333;
-        color: #fff;
-        padding: 10px 0;
-        border-bottom: #77c6e9 3px solid;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-    }
-
-    .main-header {
-        text-align: center;
-        font-size: 24px;
-        margin-top: 60px; /* This compensates for the fixed header */
-    }
-
-    header ul {
-        padding: 0;
-        list-style: none;
-        display: flex;
-        justify-content: center;
-    }
-
-    header li {
-        margin: 0 15px;
-    }
-
-    header a {
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    header a:hover {
-        background: #77c6e9;
-        border-radius: 5px;
-    }
+            background: #00796b;
+            color: #ffffff;
+            padding: 15px 0;
+            border-bottom: #004d40 4px solid;
+            text-align: center;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        header li {
+            margin: 0;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        header a:hover {
+            background: #004d40;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+        .main-header {
+            font-size: 28px;
+        }
         .bio, .cv, .publications, .projects, .contact {
             padding: 25px;
             background: #ffffff;
