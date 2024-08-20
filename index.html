@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            scroll-behavior: smooth;
         }
         .container {
             width: 80%;
@@ -21,53 +22,43 @@
         header {
             background: #333;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
+            padding: 10px 0;
             border-bottom: #77c6e9 3px solid;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        header li {
+            margin: 0 15px;
         }
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
+            padding: 10px;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
+        header a:hover {
+            background: #77c6e9;
+            border-radius: 5px;
         }
         .main-header {
             text-align: center;
             font-size: 24px;
         }
-        .bio {
+        .bio, .cv, .publications, .projects, .contact {
             padding: 20px;
             background: #fff;
             margin-top: 20px;
         }
-        .bio h2 {
+        .bio h2, .cv h2, .publications h2, .projects h2, .contact h2 {
             color: #333;
         }
-        .bio p {
+        .bio p, .cv p, .publications p, .projects p, .contact p {
             line-height: 1.6;
-        }
-        .contact {
-            margin-top: 20px;
-            padding: 20px;
-            background: #fff;
-        }
-        .contact h2 {
-            color: #333;
-        }
-        .contact ul {
-            list-style: none;
-            padding: 0;
-        }
-        .contact li {
-            margin-bottom: 10px;
         }
         footer {
             background: #333;
@@ -82,24 +73,57 @@
     <header>
         <div class="container">
             <h1 class="main-header">Rebecca Mbaya - Founder & Social Innovator</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <div class="container">
-        <section class="bio">
+        <section id="about" class="bio">
             <h2>About Me</h2>
             <p>My name is Rebecca Mbaya and I’m a social innovator and co-founder of Congo Excel Technologies (CET).</p>
             <P>CET mission is to empower the local populations in the DRC by equipping them with the skills and competencies needed to navigate and thrive in the Fourth Industrial Revolution. My ultimate goal is to bridge the gap between technology and underserved communities. Hence fostering not only economic growth but also social development across the continent.</p>
             <p>I am also serving on the executive committee of SAMEA’s Tech-enabled MERL Community of Practice (CoP) in South Africa.</p>
             <p>I have experienced the tangible benefits of tech-enabled evidence-based decision-making in our communities so I advocate for the responsible use of tech to enhance processes. This involves responsibly leveraging technology to empower communities and improve lives,promoting the responsible use of the latest technological tools and platforms to support professional and development programs activities, improving  community engagement, guiding impactful and informed decisions that drive sustainable change ultimately leading to better outcomes for communities.</p>
             <p>With a firm belief in the transformative potential of technology, I am dedicated to driving meaningful impact and driving forward the advancement of my country and its people.</p>
+            
         </section>
-        <section class="contact">
+
+        <section id="cv" class="cv">
+            <h2>Curriculum Vitae</h2>
+            <p><a href="link-to-your-cv.pdf" target="_blank">Download my CV</a></p>
+            <!-- Download my CV -->
+        </section>
+
+        <section id="publications" class="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li><a href="link-to-publication1.pdf" target="_blank">Publication Title 1</a></li>
+                <li><a href="link-to-publication2.pdf" target="_blank">Publication Title 2</a></li>
+            </ul>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="link-to-project1.html" target="_blank">Project Title 1</a></li>
+                <li><a href="link-to-project2.html" target="_blank">Project Title 2</a></li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact">
             <h2>Contact Information</h2>
             <ul>
                 <li><a href="https://www.linkedin.com/in/rebecca-mbaya-🇨🇩🇿🇦-30482841" target="_blank">LinkedIn</a></li>
                 <li><a href="https://github.com/Ribz24" target="_blank">GitHub</a></li>
-                <li><a href="https://wordsthatcount.org/female-social-innovator-rebecca-mwenga-mbaya/"target="_blank"_blank">My Journey</a></li>
-                <li><a href="https://mailchi.mp/98bfa166c5e2/empowerrd-congo-dition-ia/"target="_blank">Subscribe to my Newsletter:EmpowerRD Congo: Édition IA 🇨🇩</a></li>
+                <li><a href="https://wordsthatcount.org/female-social-innovator-rebecca-mwenga-mbaya/" target="_blank">My Journey</a></li>
+                <li><a href="https://mailchi.mp/98bfa166c5e2/empowerrd-congo-dition-ia/" target="_blank">Subscribe to my Newsletter: EmpowerRD Congo: Édition IA 🇨🇩</a></li>
             </ul>
         </section>
     </div>
