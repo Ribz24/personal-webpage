@@ -20,7 +20,7 @@
             margin: auto;
             overflow: hidden;
         }
-       header {
+        header {
             background: #00796b;
             color: #ffffff;
             padding: 15px 0;
@@ -33,9 +33,10 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+        }
         header li {
             margin: 0;
-            position: relative; 
+            position: relative; /* For dropdown positioning */
         }
         header a {
             color: #ffffff;
@@ -44,13 +45,15 @@
             font-size: 16px;
             padding: 10px;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-            display: block; 
+            display: block; /* Ensure links are block-level elements */
         }
         header a:hover {
             background: #004d40;
             border-radius: 5px;
             color: #ffffff;
         }
+
+        /* Dropdown styles */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -58,14 +61,13 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            text-align: left; 
+            text-align: left; /* Align text to the left */
         }
         .dropdown-content a {
             color: #004d40;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: left;
             border-bottom: 1px solid #00796b;
         }
         .dropdown-content a:hover {
@@ -74,6 +76,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .main-header {
             font-size: 28px;
         }
@@ -89,10 +92,10 @@
             transform: scale(1.02);
             background-color: #b2dfdb;
         }
-        .bio h2, .cv h2, .publications h2, .projects h2, .contact h2, .special-edition {
+        .bio h2, .cv h2, .publications h2, .projects h2, .contact h2, .special-edition h2 {
             color: #00796b;
         }
-        .bio p, .cv p, .publications p, .projects p, .contact p, {
+        .bio p, .cv p, .publications p, .projects p, .contact p {
             line-height: 1.7;
         }
         footer {
@@ -107,11 +110,24 @@
             margin: 0;
         }
         .services div:hover {
-        background-color: #e0f3ff;
-        transform: scale(1.02);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
+            background-color: #e0f3ff;
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Ensure that the hover effect applies only to dropdown content and not to the entire page */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            background: #ffffff;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .dropdown-content a:hover {
+            background-color: #b2dfdb;
+        }
+
     </style>
 </head>
 <body>
@@ -128,12 +144,10 @@
                     <li class="dropdown">
                         <a href="#special-edition">Special Editions</a>
                         <div class="dropdown-content">
-                            <a href="Le rôle de l'Afrique dans les révolutions industrielles.html">Special Edition 1</a>
-                            <a href="Le rôle de l'Afrique dans les révolutions industrielles.html">Special Edition 2 </a>
+                            <a href="special-editions/edition-1.html">Special Edition 1</a>
+                            <a href="special-editions/edition-2.html">Special Edition 2</a>
                             <a href="special-editions/edition-3.html">Special Edition 3</a>
-                            <a href="special-editions/edition-4.html">Special Edition 4</a>
-                            <a href="special-editions/edition-5.html">Special Edition 5</a>
-                       </div>
+                        </div>
                     </li>
                     <li><a href="#contact">More Info</a></li>
                 </ul>
