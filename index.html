@@ -45,12 +45,11 @@
             font-size: 16px;
             padding: 10px;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-            display: block; /* Ensure links are block-level elements */
+            display: block;
         }
         header a:hover {
             background: #004d40;
             border-radius: 5px;
-            color: #ffffff;
         }
 
         /* Dropdown styles */
@@ -72,6 +71,7 @@
         }
         .dropdown-content a:hover {
             background-color: #e0f7fa;
+            color: #00796b;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -116,18 +116,15 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        /* Ensure that the hover effect applies only to dropdown content and not to the entire page */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            background: #ffffff;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
+        /* Ensure the dropdown hover effect applies only within the dropdown area */
         .dropdown-content a:hover {
             background-color: #b2dfdb;
         }
 
+        /* Prevent the dropdown from affecting other elements' hover states */
+        .dropdown:hover > a {
+            background-color: #004d40;
+        }
     </style>
 </head>
 <body>
@@ -147,6 +144,7 @@
                             <a href="special-editions/edition-1.html">Special Edition 1</a>
                             <a href="special-editions/edition-2.html">Special Edition 2</a>
                             <a href="special-editions/edition-3.html">Special Edition 3</a>
+                            <!-- Add more editions as needed -->
                         </div>
                     </li>
                     <li><a href="#contact">More Info</a></li>
