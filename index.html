@@ -14,12 +14,41 @@
             color: #004d40;
             scroll-behavior: smooth;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            position: relative;
+            overflow-x: hidden;
         }
+        
+        /* Transparent Background Icons */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: url('https://example.com/icon1.png') no-repeat center center / contain;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            background: url('https://example.com/icon2.png') no-repeat center center / contain;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
+
         header {
             background: #00796b;
             color: #ffffff;
@@ -29,7 +58,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         header ul {
             padding: 0;
             list-style: none;
@@ -37,10 +68,12 @@
             justify-content: center;
             gap: 20px;
         }
+
         header li {
             margin: 0;
             position: relative; /* For dropdown positioning */
         }
+
         header a {
             color: #ffffff;
             text-decoration: none;
@@ -50,6 +83,7 @@
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
             display: block;
         }
+
         header a:hover {
             background: #004d40;
             border-radius: 5px;
@@ -65,6 +99,7 @@
             z-index: 1;
             text-align: left; /* Align text to the left */
         }
+
         .dropdown-content a {
             color: #004d40;
             padding: 12px 16px;
@@ -72,10 +107,12 @@
             display: block;
             border-bottom: 1px solid #00796b;
         }
+
         .dropdown-content a:hover {
             background-color: #e0f7fa;
             color: #00796b;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -83,24 +120,30 @@
         .main-header {
             font-size: 28px;
         }
+
         .bio, .cv, .publications, .projects, .contact, .special-edition {
             padding: 25px;
             background: #ffffff;
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+
         .bio:hover, .cv:hover, .publications:hover, .projects:hover, .contact:hover, .special-edition:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
             background-color: #b2dfdb;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
+
         .bio h2, .cv h2, .publications h2, .projects h2, .contact h2, .special-edition h2 {
             color: #00796b;
         }
+
         .bio p, .cv p, .publications p, .projects p, .contact p {
             line-height: 1.7;
         }
+
         footer {
             background: #004d40;
             color: #ffffff;
@@ -109,9 +152,11 @@
             margin-top: 20px;
             border-top: #00796b 4px solid;
         }
+
         footer p {
             margin: 0;
         }
+
         .services div:hover {
             background-color: #e0f3ff;
             transform: scale(1.02);
@@ -134,13 +179,43 @@
             background-color: #1a1a1a;
             color: #ffffff;
         }
+
         header.dark-mode {
             background: #333333;
             border-bottom-color: #666666;
         }
+
         footer.dark-mode {
             background: #333333;
             border-top-color: #666666;
+        }
+
+        /* Toggle Dark Mode Button */
+        #theme-toggle {
+            background: none;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        #theme-toggle:hover {
+            background: #ffffff;
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+        #theme-toggle.dark-mode {
+            color: #333333;
+            border-color: #666666;
+        }
+
+        #theme-toggle.dark-mode:hover {
+            background: #666666;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -164,8 +239,9 @@
                             <!-- Add more editions as needed -->
                         </div>
                     </li>
-                    <li><a href="#contact">More Info</a></li>
-                    <li><button id="theme-toggle" style="background: none; border: none; color: #ffffff; font-size: 16px; cursor: pointer;">Toggle Dark Mode</button></li>
+                    <li>
+                        <button id="theme-toggle">Toggle Dark Mode</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -174,7 +250,7 @@
         <section id="about" class="bio">
             <h2>About Me</h2>
             <p>I am Rebecca Mbaya, a social innovator and techpreneur.</p>
-            <P> My mission is to empower those who are often overlooked and left behind, whether in local communities in the DRC or other developing regions around the world by equipping them with the skills and competencies needed to navigate and thrive in the Fourth Industrial Revolution. My ultimate goal is to bridge the gap between technology and underserved communities. Hence fostering not only economic growth but also social development across the world.</p>
+            <p>My mission is to empower those who are often overlooked and left behind, whether in local communities in the DRC or other developing regions around the world by equipping them with the skills and competencies needed to navigate and thrive in the Fourth Industrial Revolution. My ultimate goal is to bridge the gap between technology and underserved communities. Hence fostering not only economic growth but also social development across the world.</p>
             <p>I serve as the co-founder of Congo Excel Technologie (CET) in the DRC and as a member of the steering committee for SAMEA’s Tech-enabled MERL Community of Practice (CoP) in South Africa.</p>
             <p>I have experienced the tangible benefits of tech-enabled evidence-based decision-making in communities so I advocate for the responsible use of tech to enhance processes. This involves responsibly leveraging technology to empower communities and improve lives, promoting the responsible use of the latest technological tools and platforms to support professional and development program activities, improving community engagement, and guiding impactful and informed decisions that drive sustainable change ultimately leading to better outcomes for communities.</p>
             <p>With a firm belief in the transformative potential of technology, I am dedicated to driving meaningful impact and driving forward the advancement of underserved communities.</p>
@@ -187,47 +263,48 @@
             <p><a href="Mbaya RM_Curriculum Vitae.pdf" target="_blank">Download my CV</a></p>
         </section>
 
-       <section id="services" class="services" style="padding: 40px 0;">
-    <h2 style="text-align: center; color: #0056b3; margin-bottom: 30px;">Services</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; overflow: visible;">
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Project Coordination</h3>
-            <p style="color: #444444;">Efficient and timely project coordination services tailored to your organization’s needs.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Research Assistance</h3>
-            <p style="color: #444444;">Providing thorough and reliable research assistance to ensure your project's success.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Market Research</h3>
-            <p style="color: #444444;">Delivering actionable insights to help your business thrive in competitive markets.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Data Analysis</h3>
-            <p style="color: #444444;">Turning raw data into meaningful insights for informed decision-making.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Advisory & Strategy</h3>
-            <p style="color: #444444;">Expert advice and strategic planning to guide your organization’s growth.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Monitoring & Evaluation</h3>
-            <p style="color: #444444;">Comprehensive M&E services to measure and enhance program impact.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Report Writing & Dissemination</h3>
-            <p style="color: #444444;">Clear, concise, and impactful reporting to communicate your results effectively.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Content Creation with Digital Media</h3>
-            <p style="color: #444444;">Engaging and creative content to elevate your brand’s online presence.</p>
-        </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
-            <h3 style="color: #0056b3;">Document Formatting & Layout Design</h3>
-            <p style="color: #444444;">Professional document formatting and layout design for a polished presentation.</p>
-        </div>
-    </div>
-</section>
+        <section id="services" class="services" style="padding: 40px 0;">
+            <h2 style="text-align: center; color: #0056b3; margin-bottom: 30px;">Services</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; overflow: visible;">
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Project Coordination</h3>
+                    <p style="color: #444444;">Efficient and timely project coordination services tailored to your organization’s needs.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Research Assistance</h3>
+                    <p style="color: #444444;">Providing thorough and reliable research assistance to ensure your project's success.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Market Research</h3>
+                    <p style="color: #444444;">Delivering actionable insights to help your business thrive in competitive markets.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Data Analysis</h3>
+                    <p style="color: #444444;">Turning raw data into meaningful insights for informed decision-making.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Advisory & Strategy</h3>
+                    <p style="color: #444444;">Expert advice and strategic planning to guide your organization’s growth.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Monitoring & Evaluation</h3>
+                    <p style="color: #444444;">Comprehensive M&E services to measure and enhance program impact.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Report Writing & Dissemination</h3>
+                    <p style="color: #444444;">Clear, concise, and impactful reporting to communicate your results effectively.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Content Creation with Digital Media</h3>
+                    <p style="color: #444444;">Engaging and creative content to elevate your brand’s online presence.</p>
+                </div>
+                <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+                    <h3 style="color: #0056b3;">Document Formatting & Layout Design</h3>
+                    <p style="color: #444444;">Professional document formatting and layout design for a polished presentation.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="publications" class="publications">
             <h2>Publications</h2>
             <p><a href="https://mailchi.mp/98bfa166c5e2/empowerrd-congo-dition-ia" target="_blank">Publication 1</a></p>
@@ -257,7 +334,7 @@
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Rebecca Mbaya</p>
+        <p>&copy; 2024 Rebecca Mbaya. All Rights Reserved.</p>
     </footer>
 
     <!-- JavaScript for smooth scroll, sticky nav, and dark mode -->
@@ -278,9 +355,11 @@
             document.body.classList.toggle("dark-mode");
             document.querySelector("header").classList.toggle("dark-mode");
             document.querySelector("footer").classList.toggle("dark-mode");
+            toggleButton.classList.toggle("dark-mode");
         });
     </script>
 </body>
+</html>
 </html>
 
 
