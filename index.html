@@ -26,6 +26,9 @@
             padding: 15px 0;
             border-bottom: #004d40 4px solid;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header ul {
             padding: 0;
@@ -125,6 +128,20 @@
         .dropdown:hover > a {
             background-color: #004d40;
         }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        header.dark-mode {
+            background: #333333;
+            border-bottom-color: #666666;
+        }
+        footer.dark-mode {
+            background: #333333;
+            border-top-color: #666666;
+        }
     </style>
 </head>
 <body>
@@ -148,6 +165,7 @@
                         </div>
                     </li>
                     <li><a href="#contact">More Info</a></li>
+                    <li><button id="theme-toggle" style="background: none; border: none; color: #ffffff; font-size: 16px; cursor: pointer;">Toggle Dark Mode</button></li>
                 </ul>
             </nav>
         </div>
@@ -155,9 +173,9 @@
     <div class="container">
         <section id="about" class="bio">
             <h2>About Me</h2>
-            <p>I am Rebecca Mbaya, a social innovator and co-founder of Congo Excel Technologies (CET).</p>
-            <P> CET's mission is to empower the local populations in the DRC by equipping them with the skills and competencies needed to navigate and thrive in the Fourth Industrial Revolution. My ultimate goal is to bridge the gap between technology and underserved communities. Hence fostering not only economic growth but also social development across the continent.</p>
-            <p>I am also serving on the steering committee of SAMEA’s Tech-enabled MERL Community of Practice (CoP) in South Africa.</p>
+            <p>I am Rebecca Mbaya, a social innovator and techpreneur.</p>
+            <P> My mission is to empower those who are often overlooked and left behind, whether in local communities in the DRC or other developing regions around the world by equipping them with the skills and competencies needed to navigate and thrive in the Fourth Industrial Revolution. My ultimate goal is to bridge the gap between technology and underserved communities. Hence fostering not only economic growth but also social development across the continent.</p>
+            <p>I serve as the co-founder of Congo Excel Technologie (CET) in the DRC and as a member of the steering committee for SAMEA’s Tech-enabled MERL Community of Practice (CoP) in South Africa.</p>
             <p>I have experienced the tangible benefits of tech-enabled evidence-based decision-making in communities so I advocate for the responsible use of tech to enhance processes. This involves responsibly leveraging technology to empower communities and improve lives, promoting the responsible use of the latest technological tools and platforms to support professional and development program activities, improving community engagement, and guiding impactful and informed decisions that drive sustainable change ultimately leading to better outcomes for communities.</p>
             <p>With a firm belief in the transformative potential of technology, I am dedicated to driving meaningful impact and driving forward the advancement of underserved communities.</p>
             <p>With a deep commitment to social justice, extensive experience in advocacy and strategic communications, and a demonstrated aptitude for leveraging digital media, I am excited about the opportunities to empower impoverished and marginalized people to equitably access and benefit from the transformative potential of the Fourth Industrial Revolution. </p>
@@ -171,77 +189,98 @@
        <section id="services" class="services" style="padding: 40px 0;">
     <h2 style="text-align: center; color: #0056b3; margin-bottom: 30px;">Services</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; overflow: visible;">
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Project Coordination</h3>
-            <p>Efficiently manage and oversee projects from inception to completion, ensuring timely delivery and alignment with client objectives.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Project Coordination</h3>
+            <p style="color: #444444;">Efficient and timely project coordination services tailored to your organization’s needs.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Research Assistance</h3>
-            <p>Provide comprehensive support for research activities, including data collection, literature review, and analytical reporting.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Research Assistance</h3>
+            <p style="color: #444444;">Providing thorough and reliable research assistance to ensure your project's success.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Market Research</h3>
-            <p>Conduct in-depth market analysis to identify trends, opportunities, and competitive landscapes, helping businesses make informed decisions.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Market Research</h3>
+            <p style="color: #444444;">Delivering actionable insights to help your business thrive in competitive markets.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Data Analysis</h3>
-            <p>Transform raw data into actionable insights through advanced analytical techniques, supporting evidence-based decision-making.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Data Analysis</h3>
+            <p style="color: #444444;">Turning raw data into meaningful insights for informed decision-making.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Monitoring and Evaluation</h3>
-            <p>Design and implement M&E frameworks to track project progress, assess impact, and optimize future initiatives.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Advisory & Strategy</h3>
+            <p style="color: #444444;">Expert advice and strategic planning to guide your organization’s growth.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Report Writing and Dissemination</h3>
-            <p>Craft clear, concise, and compelling reports that effectively communicate findings to stakeholders, followed by targeted dissemination strategies.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Monitoring & Evaluation</h3>
+            <p style="color: #444444;">Comprehensive M&E services to measure and enhance program impact.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Content Creation with Digital Media</h3>
-            <p>Develop engaging digital content tailored to various platforms, enhancing brand presence and audience engagement.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Report Writing & Dissemination</h3>
+            <p style="color: #444444;">Clear, concise, and impactful reporting to communicate your results effectively.</p>
         </div>
-        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, background-color 0.3s ease;">
-            <h3 style="color: #003366;">Document Formatting and Layout Design</h3>
-            <p>Professional formatting and layout design services to ensure documents are visually appealing, well-organized, and publication-ready.</p>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Content Creation with Digital Media</h3>
+            <p style="color: #444444;">Engaging and creative content to elevate your brand’s online presence.</p>
+        </div>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #0056b3;">Document Formatting & Layout Design</h3>
+            <p style="color: #444444;">Professional document formatting and layout design for a polished presentation.</p>
         </div>
     </div>
 </section>
-       
         <section id="publications" class="publications">
             <h2>Publications</h2>
-            <ul>
-                <li><a href="link-to-publication1.pdf" target="_blank">Coming Soon</a></li>
-                <li><a href="link-to-publication2.pdf" target="_blank">Coming Soon</a></li>
-                <li><a href="link-to-publication3.pdf" target="_blank">Coming Soon</a></li>
-            </ul>
+            <p><a href="publications/publication1.pdf" target="_blank">Publication 1</a></p>
+            <p><a href="publications/publication2.pdf" target="_blank">Publication 2</a></p>
+            <p><a href="publications/publication3.pdf" target="_blank">Publication 3</a></p>
         </section>
 
         <section id="projects" class="projects">
             <h2>Projects</h2>
-            <ul>
-                <li><a href="link-to-project1.html" target="_blank">Coming Soon</a></li>
-                <li><a href="link-to-project2.html" target="_blank">Coming Soon</a></li>
-                <li><a href="link-to-project3.html" target="_blank">Coming Soon</a></li>
-            </ul>
+            <p>Project 1</p>
+            <p>Project 2</p>
+            <p>Project 3</p>
+        </section>
+
+        <section id="special-edition" class="special-edition">
+            <h2>Special Editions</h2>
+            <p>Explore special editions with unique insights and thought leadership content.</p>
+            <p><a href="special-editions/edition-1.html">Special Edition 1</a></p>
+            <p><a href="special-editions/edition-2.html">Special Edition 2</a></p>
+            <p><a href="special-editions/edition-3.html">Special Edition 3</a></p>
         </section>
 
         <section id="contact" class="contact">
             <h2>More Info</h2>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/rebecca-mbaya-🇨🇩🇿🇦-30482841" target="_blank">LinkedIn</a></li>
-                <li><a href="https://wordsthatcount.org/female-social-innovator-rebecca-mwenga-mbaya/" target="_blank">My Journey</a></li>
-                <li><a href="https://mailchi.mp/98bfa166c5e2/empowerrd-congo-dition-ia/" target="_blank">Subscribe to my Newsletter: EmpowerRD Congo: Édition IA 🇨🇩</a></li>
-            </ul>
-        </section>
-        <section id="special-edition" class="special-edition">
-            <h2>Special Edition</h2>
-            <p><a href="Special edition.html" target="_blank">Read Special Edition 1</a></p>
-            <p><a href="Special editions/edition2.html" target="_blank">Read Special Edition 2</a></p>
-            <p><a href="special-editions/edition-3.html" target="_blank">Read Special Edition 3</a></p>
+            <p><a href="mailto:rebeccambaya@example.com">Email me</a></p>
+            <p><a href="https://www.linkedin.com/in/rebecca-mbaya" target="_blank">Connect on LinkedIn</a></p>
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Rebecca Mbaya. All Rights Reserved.</p>
+        <p>&copy; 2024 Rebecca Mbaya</p>
     </footer>
+
+    <!-- JavaScript for smooth scroll, sticky nav, and dark mode -->
+    <script>
+        // Sticky navigation on scroll
+        window.onscroll = function() {
+            var header = document.querySelector("header");
+            if (window.pageYOffset > 0) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        };
+
+        // Dark mode toggle
+        const toggleButton = document.getElementById("theme-toggle");
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            document.querySelector("header").classList.toggle("dark-mode");
+            document.querySelector("footer").classList.toggle("dark-mode");
+        });
+    </script>
 </body>
 </html>
+
+
 
