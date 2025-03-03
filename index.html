@@ -27,7 +27,6 @@
             </div>
           </li>
           <li>
-            <button id="theme-toggle">Toggle Dark Mode</button>
           </li>
         </ul>
       </nav>
@@ -44,7 +43,6 @@
             <p>With a deep commitment to social justice, extensive experience in advocacy and strategic communications, and a demonstrated aptitude for leveraging digital media, I am excited about the opportunities to empower impoverished and marginalized people to equitably access and benefit from the transformative potential of the Fourth Industrial Revolution. </p>
             <p><a href="https://wordsthatcount.org/female-social-innovator-rebecca-mwenga-mbaya/">Learn more about my journey here.</a></p>
         </section>
-
         <section id="cv" class="cv">
             <h2>Curriculum Vitae</h2>
             <p><a href="Mbaya RebeccaM_CV.pdf" target="_blank">Download my CV</a></p>
@@ -137,15 +135,6 @@
         header.classList.remove("sticky");
       }
     };
-
-    // Dark mode toggle
-    const toggleButton = document.getElementById("theme-toggle");
-    toggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      document.querySelector("header").classList.toggle("dark-mode");
-      document.querySelector("footer").classList.toggle("dark-mode");
-      toggleButton.classList.toggle("dark-mode");
-    });
   </script>
 </body>
 </html>
