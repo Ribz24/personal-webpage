@@ -197,40 +197,5 @@ footer p {
   color: var(--text-light);
 }
 
-/* Publications Section */
-.publications {
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.publications:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.publications h2 {
-  color: var(--accent-teal);
-  margin-bottom: 20px;
-}
-
-.publications p {
-  line-height: 1.7;
-  color: var(--text-light);
-}
-
-.publications a {
-  color: var(--accent-pink);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.publications a:hover {
-  color: var(--accent-teal);
-}
 
 
